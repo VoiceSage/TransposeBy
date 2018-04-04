@@ -1,5 +1,7 @@
 <DnaLibrary Name="TransposeBy Add-In" RuntimeVersion="v4.0">
   <ExternalLibrary Path="TransposeBy.dll" ExplicitExports="false" LoadFromBytes="true" Pack="true" />
+
+  <Reference Path="ExcelDna.IntelliSense.dll" Pack="true" />
   
   <!-- 
        The RuntimeVersion attribute above allows two settings:

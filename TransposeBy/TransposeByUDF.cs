@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using ExcelDna.Integration;
+using ExcelDna.IntelliSense;
 
 namespace TransposeBy
 {
     public class TransposeByUDF : XlCall
     {
         [ExcelFunction(Description = "Transpose a range of values breaking every n number of rows/columns.")]
-        public static object TransposeBy(object oSource, [Optional] bool bByRow)
+        public static object TransposeBy(
+                                            [ExcelArgument(Name = "SourceData", Description = "The range of cells to be transposed.")] object oSource,
+                                            [ExcelArgument(Name = "ByRow", Description = "Optional flag to force transposing vertically insted of the horizontal default.")] [Optional] bool bByRow
+                                        )
         {
             try
             {
